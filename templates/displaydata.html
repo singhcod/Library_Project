@@ -1,0 +1,50 @@
+{% include 'cdnlines.html' %}
+<html>
+<head>
+    <title>title</title>
+</head>
+<body style="background-color: lightsalmon">
+<div class="container-fluid">
+    <h2 style="text-align: center">Books Library</h2>
+    <div class="row">
+        <div class=" offset-md-3 col-lg-6">
+            {% if books %}
+                <table class="table table-bordered bg-white">
+                    <thead>
+                    <tr>
+                        <th>BOOk Name</th>
+                        <th>Author Name</th>
+                        <th>Book Page</th>
+                        <th>Prise</th>
+                        <th>Released Date</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for book in books %}
+                        <tr>
+                            <td>{{ book.book_name }}</td>
+                            <td>{{ book.author_name }}</td>
+                            <td>{{ book.pages }}</td>
+                            <td>{{ book.prise }}</td>
+                            <td>{{ book.released_date }}</td>
+                            <td>
+                                <a href="{% url 'update_data' book.id %}" class="btn btn-sm btn-success">Update</a>
+                                <a href="{% url 'delete' book.id %}" class="btn btn-sm btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <h2>No Books Are Available:</h2>
+            {% endif %}
+            <center>
+
+                <a href="{% url 'addbook' %}" class="btn btn-primary">ADD Book</a>
+            </center>
+        </div>
+    </div>
+</div>
+</body>
+</html>

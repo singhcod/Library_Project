@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title></title>
+    {% include 'cdnlines.html' %}
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="offset-md-4 col-md-4">
+                <h1 class="text-center">Login Here</h1>
+                <form method="POST">
+                    {% csrf_token %}
+                    <label>Enter Email ID </label>
+                    <input type="text" name="username" class="form-control" placeholder="email">
+
+                    <label>Enter password</label>
+                    <input type="password" name="password" class="form-control" placeholder="password">
+
+                    <center>
+
+                    <input type="submit" vlaue="Login" class="btn btn-success">
+                    <input type="reset" vlaue="Cancel" class="btn btn-danger">
+                    </center>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

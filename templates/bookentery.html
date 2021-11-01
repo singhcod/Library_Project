@@ -1,0 +1,37 @@
+{% include 'cdnlines.html' %}
+<html>
+<head>
+    <title>libraryProject</title>
+</head>
+<body>
+<div class="container-fluid">
+    <h2 style="text-align: center">Add New Book</h2>
+    <div class="row">
+        <div class="offset-md-4 col-md-4">
+            <form method="POST">
+                {% csrf_token %}
+
+                <label>Enter Book Name:</label>
+                <input type="text" name="book_name" class="form-control" placeholder="bookname">
+
+                <label>Enter Author Name:</label>
+                <input type="text" name="author_name" class="form-control" placeholder="author">
+
+                <label>Enter Number of Pages:</label>
+                <input type="number" name="pages" class="form-control" placeholder="pages">
+
+                <label>Enter Prise of Book</label>
+                <input type="number" name="prise" class="form-control" placeholder="prise">
+
+                <label>Enter Release Date</label>
+                <input type="date" name="released_date" class="form-control" placeholder="date">
+
+                <input type="submit" value="Add" class="btn btn-success">
+                <input type="reset" value="Cancel" class="btn btn-danger">
+
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
